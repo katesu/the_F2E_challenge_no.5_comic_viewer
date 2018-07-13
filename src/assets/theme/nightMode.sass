@@ -1,0 +1,67 @@
+.night-mode
+  background-color: $primary
+  header
+    background-color: $danger
+  .web-logo
+    color: $primary
+    &:hover
+      color: $primary
+
+  //
+  .info-table
+    color: $secondary
+
+  .comic-episodes
+    border-color: $secondary
+  .episodes-header
+    color: $primary
+    background-color: $secondary
+  .episode-item
+    &:hover
+      background-color: $danger
+      .episodes-new
+        background-color: $primary
+    a
+      color: $secondary
+
+
+
+  // viewer header
+  .viewer-comic-name,
+  .viewer-mode-switch,
+    color: $secondary
+
+  // viewer mode switch
+  .slider
+    border-color: $secondary
+    &:before
+      background-color: $secondary
+
+  .viewer-body .btn-page
+    i
+      color: rgba(255,255,255,0.20)
+    &:hover
+      background-color: $danger
+      i
+        color: $primary
+
+  // preview images
+  .preview-images
+    > div.active
+      border-color: $danger
+      &:after
+        border-bottom-color: $danger
+  .page-number
+    color: $secondary
+
+  // viewer page bar
+  .viewer-page-bar .btn-page
+      background-color: $secondary
+      i
+        color: $primary
+  .scroll-bar
+    border-color: $secondary
+  .scroll-pointer
+    background-color: $secondary
+    i
+      color: $primary

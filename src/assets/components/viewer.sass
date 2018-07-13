@@ -1,0 +1,250 @@
+.viewer
+	width: 780px
+	margin-left: auto
+	margin-right: auto
+
+	// 第一層
+
+	// viewer header
+	.viewer-comic-name
+		width: rem-calc(170)
+		font-size: rem-calc(20)
+	.viewer-mode-switch
+		i
+			font-size: rem-calc(20)
+			line-height: 0
+
+	// viewer mode switch
+	.slider
+		position: relative
+		width: rem-calc(48)
+		height: rem-calc(24)
+		border: 2px solid $primary
+		&:before
+			content: ''
+			position: absolute
+			top: -2px
+			left: -2px
+			width: rem-calc(24)
+			height: rem-calc(24)
+			background-color: $primary
+			transition: .3s
+	.switch-off
+		color: $dark
+
+
+	#nightMode-switch:checked
+		& ~ label .slider:before
+			transform: translateX(rem-calc(24))
+
+	// viewer-body
+	.viewer-body .btn-page
+		position: relative
+		width: rem-calc(80)
+		&:hover
+			background-color: $primary
+			i
+				color: $danger
+		i
+			position: absolute
+			top: 45%
+			color: rgba(0,0,0,0.10)
+			font-size: rem-calc(48)
+	.viewer-content
+		flex: 1
+
+	// viewer-footer
+	.preview-display
+		height: rem-calc(126)
+		margin-bottom: 10px
+
+	// preview display
+	.preview-content
+		overflow: hidden
+		height: rem-calc(152)
+	.btn-episode
+		position: absolute
+		top: rem-calc(29)
+		width: rem-calc(50)
+		height: calc(100% - 12px)
+		color: transparent
+		font-size: rem-calc(30)
+		background-color: rgba(0,0,0,0.80)
+		cursor: pointer
+		z-index: 999
+		&:before
+			position: absolute
+			top: -50%
+			left: 50%
+			transform: translateX(-50%)
+			width: rem-calc(126)
+			font-size: rem-calc(14)
+			font-weight: 700
+			text-transform: uppercase
+			padding: rem-calc(10)
+			background-color: $danger
+		&:after
+			content: ""
+			position: absolute
+			left: 50%
+			bottom: calc(100% + 3px)
+			transform: translateX(-50%)
+			border-top: 10px solid transparent
+			border-left: 10px solid transparent
+			border-right: 10px solid transparent
+			border-bottom: 10px solid transparent
+		&:hover
+			color: $primary
+			background-color: $danger
+		&.active
+			color: $primary
+	.pre-episode
+		left: 0
+	.next-episode
+		right: 0
+		&.active
+			background-color: $danger
+			&:before
+				content: "next episode"
+				background-color: $danger
+			&:after
+				border-top-color: $danger
+
+	// preview content
+	.preview-images
+		position: absolute
+		top: rem-calc(26)
+		left: rem-calc(50)
+		div
+			width: rem-calc(80)
+			position: relative
+			box-sizing: content-box
+			border: 3px solid transparent
+			margin-left: rem-calc(10)
+			margin-right: rem-calc(10)
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				background-color: rgba(0,0,0,0.10)
+		div.active
+			border-color: $primary
+			&:before
+				background-color: transparent
+			&:after
+				content: ""
+				position: absolute
+				left: 50%
+				bottom: calc(100% + 3px)
+				transform: translateX(-50%)
+				border-top: 10px solid transparent
+				border-left: 10px solid transparent
+				border-right: 10px solid transparent
+				border-bottom: 10px solid $primary
+			.page-number
+				color: transparent
+
+	// preview images
+	.page-number
+		position: absolute
+		top: 0
+		left: 50%
+		transform: translate(-50%,-100%)
+		line-height: 1rem
+		font-size: rem-calc(14)
+		font-weight: 700
+
+	// viewer page bar
+	.viewer-page-bar
+		margin-top: rem-calc(56)
+		.btn-page
+			width: rem-calc(50)
+			height: rem-calc(20)
+			color: $secondary
+			background-color: $primary
+	.scroll-bar
+		flex: 1
+		border: 4px solid $primary
+	.scroll-pointer
+		width: rem-calc(90)
+		height: rem-calc(12)
+		font-size: rem-calc(5)
+		color: $secondary
+		margin-left: rem-calc(7)
+		margin-right: rem-calc(7)
+		background-color: $primary
+		cursor: pointer
+	.viewer-fluid + .viewer-footer
+		.btn-page
+			background-color: $secondary
+			i
+				color: $primary
+		.scroll-bar
+			border-color: $secondary
+		.scroll-pointer
+			background-color: $secondary
+			i
+				color: $primary
+
+.btn-page
+	cursor: pointer
+
+.viewer-fluid
+	position: relative
+	transform: scale(1.4)
+	z-index: 9999
+.viewer-fluid-close
+	display: none
+	position: absolute
+	top: rem-calc(4)
+	right: rem-calc(84)
+	width: rem-calc(32)
+	height: rem-calc(32)
+	font-weight: 700
+	padding-left: rem-calc(8)
+	padding-top: rem-calc(2)
+	border: 3px solid $primary
+	border-radius: 50%
+	cursor: pointer
+	.viewer-fluid &
+		display: block
+.viewer-fluid-bg
+	opacity: 0
+	content: ""
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background-color: rgba(0,0,0,0.80)
+	z-index: -1
+	&.open
+		opacity: 1
+
+.icon-control
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+
+.viewer-select-control
+	flex: 1
+	select
+		width: rem-calc(137)
+		height: auto
+		font-weight: 700
+		padding: rem-calc(8) 0 rem-calc(8) rem-calc(16)
+		border: 2px solid $primary
+		border-radius: 0
+		background-size: 12px 15px
+		& + select
+			margin-left: -2px
+	option:hover
+		color: $secondary
+		background-color: $primary
+	option:checked
+		color: $secondary
+		background-color: $primary

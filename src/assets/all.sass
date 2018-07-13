@@ -1,0 +1,41 @@
+@import 'bootstrap/scss/_functions.scss'
+@import './helpers/_functions'
+@import './helpers/_variables.scss'
+@import 'bootstrap/scss/bootstrap.scss'
+
+// Custom Style
+@import './components/comicIntroduce'
+@import './components/viewer'
+@import './theme/nightMode'
+
+body
+  background-color: #F2F2F2
+
+a:hover
+  text-decoration: none
+
+#app
+  font-family: Roboto, 'Avenir', Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: #2c3e50
+
+header
+  background-color: $primary
+  a:hover
+    text-decoration: none
+
+.web-logo
+  color: $danger
+  font-size: rem-calc(36)
+  font-weight: 700
+  font-style: italic
+  text-transform: capitalize
+  padding: rem-calc(16)
+  &:hover
+    color: $danger
+
+.container-control
+  width: 620px
+  margin-left: auto
+  margin-right: auto
