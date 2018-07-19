@@ -4,9 +4,9 @@
 				.viewer-comic-name(@click="$emit('closeViewer')") {{ book.name }}
 				i.fas.fa-caret-right.mx-2
 				.viewer-select-control
-					select#episodes-select.custom-select(v-model="currentEpIndex", @change="isLastEpisode")
+					select#episodes-select.custom-select(v-model="currentEpIndex", @change="changeEpisode")
 						option(v-for="(episode, index) in book.episodes", :value="index") episode {{ episode.id }}
-					select#pages-select.custom-select(v-model="currentPage", @change="isLastPage")
+					select#pages-select.custom-select(v-model="currentPage", @change="changePage")
 						option(v-for="page in book.pages[currentEpIndex].page", :value="page") page {{page < 10 ? '0' : ''}}{{page}}
 				.viewer-mode-switch.d-flex.align-items-center
 					i.fas.fa-sun(:class="{'switch-off': nightMode}")
